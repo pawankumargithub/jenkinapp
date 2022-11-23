@@ -15,8 +15,10 @@ pipeline{
      stage('unit test'){
      
        steps{
-         sh 'mvn test'
-       
+         def mavenHome=tool name: "maven",type:"maven"
+         def mavenCMD="${mavenHome}/bin/mvn"
+         sh "${mavenCMD} clean package"
+            
        }
      }
    
