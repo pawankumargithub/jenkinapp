@@ -12,7 +12,7 @@ pipeline{
        }
      }
      
-     stage('unit test'){
+     stage('maven build'){
      
        steps{
          def mavenHome=tool name: "maven",type:"maven"
